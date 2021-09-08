@@ -8,6 +8,10 @@
     width: 100%;
 }
 
+.canvas {
+    aspect-ratio: auto 1224 / 1584 !important;
+}
+
 @media screen and (max-width: 600px) {
     .pdfviewer{
         width: 100% !important;
