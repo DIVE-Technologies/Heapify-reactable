@@ -5,6 +5,8 @@ const bodyparser = require('body-parser');
 const userRoute = require('./routes/userRoute');
 const cors = require('cors');
 
+const port = process.env.PORT || 5001;
+
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,4 +20,4 @@ app.use(cors({ origin: (origin, callback) => callback(null, true), credentials: 
 
 app.use("/api/users", userRoute);
 
-app.listen(5001, () => { console.log("Sever started at http://localhost:5001") });
+app.listen(port, () => { console.log("Sever started at http://localhost:5001") });
