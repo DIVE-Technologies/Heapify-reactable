@@ -1,0 +1,15 @@
+.pdfviewer{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdfdoc{
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .pdfviewer{
+        width: 100% !important;
+    }
+}
