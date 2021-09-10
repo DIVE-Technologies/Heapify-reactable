@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Heapify-reactable/static/css/main.3e1736b9.chunk.css",
+    "main.js": "/Heapify-reactable/static/js/main.a910f20e.chunk.js",
+    "main.js.map": "/Heapify-reactable/static/js/main.a910f20e.chunk.js.map",
+    "runtime-main.js": "/Heapify-reactable/static/js/runtime-main.a60a2db4.js",
+    "runtime-main.js.map": "/Heapify-reactable/static/js/runtime-main.a60a2db4.js.map",
+    "static/css/2.818011ed.chunk.css": "/Heapify-reactable/static/css/2.818011ed.chunk.css",
+    "static/js/2.323969da.chunk.js": "/Heapify-reactable/static/js/2.323969da.chunk.js",
+    "static/js/2.323969da.chunk.js.map": "/Heapify-reactable/static/js/2.323969da.chunk.js.map",
+    "index.html": "/Heapify-reactable/index.html",
+    "static/css/2.818011ed.chunk.css.map": "/Heapify-reactable/static/css/2.818011ed.chunk.css.map",
+    "static/css/main.3e1736b9.chunk.css.map": "/Heapify-reactable/static/css/main.3e1736b9.chunk.css.map",
+    "static/js/2.323969da.chunk.js.LICENSE.txt": "/Heapify-reactable/static/js/2.323969da.chunk.js.LICENSE.txt",
+    "static/media/Logo.8de59bf1.png": "/Heapify-reactable/static/media/Logo.8de59bf1.png",
+    "static/media/ReactProject.fc0f4698.png": "/Heapify-reactable/static/media/ReactProject.fc0f4698.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a60a2db4.js",
+    "static/css/2.818011ed.chunk.css",
+    "static/js/2.323969da.chunk.js",
+    "static/css/main.3e1736b9.chunk.css",
+    "static/js/main.a910f20e.chunk.js"
+  ]
+}
