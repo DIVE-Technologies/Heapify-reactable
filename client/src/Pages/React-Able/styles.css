@@ -1,0 +1,12 @@
+ol li::marker {
+    font-size: 25px;
+}
+
+.listItem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    text-align: justify;
+}
