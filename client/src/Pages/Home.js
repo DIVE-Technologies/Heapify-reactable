@@ -52,12 +52,12 @@ const Home = () => {
           </Card.Body>
         </Card>
       </ReactCardFlip> */}
-      <Container className='d-flex justify-content-center mt-5'>
+      <Container className='d-flex justify-content-center pageSection'>
       <Card style={{ width: "18rem" }} className="shadow-lg">
         <Card.Body>
           <Card.Title>Week 2</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Basic of React
+            Basics of React
           </Card.Subtitle>
           <Card.Text>
             <ul>

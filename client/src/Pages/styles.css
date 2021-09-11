@@ -1,3 +1,7 @@
 .card-link:hover {
     cursor: pointer;
 }
+
+.pageSection {
+    padding-top: 100px;
+}

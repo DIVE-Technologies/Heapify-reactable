@@ -14,7 +14,7 @@ const ReactAbleWee2 = () => {
   return (
     <div>
     <PageHeading>Week 2</PageHeading>
-    <Container className="container">
+    <Container className="pageSection">
       <ol>
         <li className="listItem">
           <Heading title="Setting up the workspace with the IDE." />

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Login from "./login/Login";
+import Login from "./Pages/Login";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,21 +12,21 @@ import ReactAbleWee2 from "./Pages/React-Able/Week2";
 import Home from "./Pages/Home";
 
 function App() {
-  useEffect(() => {
-    document.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
+  // useEffect(() => {
+  //   document.addEventListener("contextmenu", (e) => {
+  //     e.preventDefault();
+  //   });
 
-    document.addEventListener("keydown", (event) => {
-      if (
-        event.ctrlKey === true ||
-        event.which === "118" ||
-        event.which === "86"
-      ) {
-        event.preventDefault();
-      }
-    });
-  }, []);
+  //   document.addEventListener("keydown", (event) => {
+  //     if (
+  //       event.ctrlKey === true ||
+  //       event.which === "118" ||
+  //       event.which === "86"
+  //     ) {
+  //       event.preventDefault();
+  //     }
+  //   });
+  // }, []);
 
   const checkAuth = () => {
     const name = localStorage.getItem("name");
@@ -57,8 +57,6 @@ function App() {
             else return <Redirect to="/" />;
           }}
         />
-        {/* <Route exact path="/home" component={Home} /> */}
-        {/* <Route exact path="/react-able/week2" component={ReactAbleWee2} /> */}
         <Redirect to="/" />
       </Switch>
     </Router>

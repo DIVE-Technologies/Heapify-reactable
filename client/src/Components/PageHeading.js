@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 const PageHeading = (props) => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className='fixed-top'>
       <Container>
         <Navbar.Brand>
           <img src={Logo} alt="Logo" height="50" width="50" />
