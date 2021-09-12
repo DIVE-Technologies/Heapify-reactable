@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dive-technologies.github.io/Heapify-reactable/",
+  "homepage": "https://heapify.studio",
   "dependencies": {
     "@react-pdf-viewer/core": "^2.4.1",
     "@react-pdf-viewer/default-layout": "^2.8.0",
