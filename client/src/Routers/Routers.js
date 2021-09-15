@@ -7,10 +7,13 @@ import {
   Redirect,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ReactAbleWee2 from "../Pages/React-Able/Week2";
+import Basics from "../Pages/React-Able-Notes/Basics";
 import Home from "../Pages/Dashboard";
 import { getLocalData } from "../Utils/LocalStorage";
 import HomePage from '../Pages/Home/HomePage';
+import JSX from "../Pages/React-Able-Notes/JSX";
+import StateProps from "../Pages/React-Able-Notes/State-Props";
+import ElementsComponents from "../Pages/React-Able-Notes/ElementsComponents";
 
 const Routers = () => {
   const checkAuth = () => {
@@ -46,11 +49,35 @@ const Routers = () => {
         />
         <Route
           exact
-          path="/react-able/week2"
+          path="/react-able/basics"
           render={() => {
-            if (checkAuth()) return <Route component={ReactAbleWee2} />;
+            if (checkAuth()) return <Route component={Basics} />;
             else return <Redirect to="/login" />;
           }}
+        />
+        <Route
+          exact
+          path="/react-able/elements-components"
+          render={() => {
+            if (checkAuth()) return <Route component={ElementsComponents} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
+        <Route
+          exact
+          path="/react-able/JSX"
+          render={() => {
+            if (checkAuth()) return <Route component={JSX} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
+        <Route 
+        exact
+        path="/react-able/State-Props"
+        render={() => {
+          if (checkAuth()) return <Route component={StateProps} />;
+          else return <Redirect to="/login" />;
+        }}
         />
         <Redirect to="/login" />
       </Switch>

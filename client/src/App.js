@@ -5,21 +5,21 @@ import { HashRouter } from "react-router-dom";
 import Routers from "./Routers/Routers";
 
 function App() {
-  // useEffect(() => {
-  //   document.addEventListener("contextmenu", (e) => {
-  //     e.preventDefault();
-  //   });
+  useEffect(() => {
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    });
 
-  //   document.addEventListener("keydown", (event) => {
-  //     if (
-  //       event.ctrlKey === true ||
-  //       event.which === "118" ||
-  //       event.which === "86"
-  //     ) {
-  //       event.preventDefault();
-  //     }
-  //   });
-  // }, []);
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.ctrlKey === true ||
+        event.which === "118" ||
+        event.which === "86"
+      ) {
+        event.preventDefault();
+      }
+    });
+  }, []);
 
   return (
     <HashRouter>
