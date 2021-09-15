@@ -1,0 +1,46 @@
+@import url('../../styles.css');
+
+.side-drawer {
+  height: 100%;
+  background: var(--primary-color);
+  position: fixed;
+  top: 0;
+  right: -140%;
+  width: 70%;
+  max-width: 400px;
+  z-index: 2;
+  transition: transform 0.3s ease-out;
+}
+
+.side-drawer.open {
+  transform: translateX(-200%);
+}
+
+.side-drawer ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.side-drawer li {
+  margin: 1.3rem 0;
+}
+
+.side-drawer a {
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 1.5rem;
+}
+
+.side-drawer a:hover,
+.side-drawer a:active {
+  color: #fa923f;
+}
+
+@media screen and (min-width: 768px) {
+  .side-drawer {
+    display: none;
+  }
+}

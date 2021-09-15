@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { Container, Button, Card } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import Btn from "../Components/Btn";
 import Input from "../Components/Input";
 import PageHeading from "../Components/PageHeading";
+import { setLocalData } from "../Utils/LocalStorage";
 
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   const validateEmail = () => {
     const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -51,9 +53,14 @@ const Login = () => {
 
       if (result.status === 200 || result.status === 201) {
         result = await result.json();
-        localStorage.setItem("name", result.name);
+        const user = {
+          name: result.name,
+          email: result.email,
+        };
+        setLocalData("heapifyUser", user);
+
         setLoading(false);
-        history.push("/home");
+        history.push("/dashboard");
         return result;
       } else {
         result = await result.json();
@@ -94,21 +101,12 @@ const Login = () => {
                   {error}
                 </div>
               ) : null}
-              {/* <div className="d-grid gap-2"> */}
-              <Button
-                style={{
-                  width: 100,
-                  // borderRadius: 5,
-                  // backgroundColor: "#00f8ff",
-                  // border: "#00f8ff",
-                  // color: "black",
-                }}
+              <Btn
                 variant="primary"
                 onClick={handleLogin}
-              >
-                {loading ? "Signing In ...." : "Login"}
-              </Button>
-              {/* </div> */}
+                loading={isLoading}
+                title="Login"
+              />
             </form>
           </Card.Body>
         </Card>
