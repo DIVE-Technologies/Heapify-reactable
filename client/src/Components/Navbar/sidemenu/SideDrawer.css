@@ -28,7 +28,7 @@
   margin: 1.3rem 0;
 }
 
-.side-drawer a {
+.side-drawer div {
   text-decoration: none;
   color: var(--white-color);
   font-size: 1.5rem;

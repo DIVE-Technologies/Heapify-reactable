@@ -9,27 +9,17 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Basics from "../Pages/React-Able-Notes/Basics";
 import Home from "../Pages/Dashboard";
-import { getLocalData } from "../Utils/LocalStorage";
 import HomePage from '../Pages/Home/HomePage';
 import JSX from "../Pages/React-Able-Notes/JSX";
 import StateProps from "../Pages/React-Able-Notes/State-Props";
 import ElementsComponents from "../Pages/React-Able-Notes/ElementsComponents";
+import { checkAuth } from '../Utils/checkAuth';
 
 const Routers = () => {
-  const checkAuth = () => {
-    const name = getLocalData("heapifyUser");
-    
-    if (name !== null) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   return (
     <HashRouter>
       <Switch>
-        {/* <Route exact path='/home' component={HomePage} /> */}
+        <Route exact path='/home' component={HomePage} />
         <Route
           exact
           path="/login"
@@ -44,7 +34,7 @@ const Routers = () => {
           path="/dashboard"
           render={() => {
             if (checkAuth()) return <Route component={Home} />;
-            else return <Redirect to="/login" />;
+            else return <Redirect to="/home" />;
           }}
         />
         <Route
@@ -52,7 +42,7 @@ const Routers = () => {
           path="/react-able/basics"
           render={() => {
             if (checkAuth()) return <Route component={Basics} />;
-            else return <Redirect to="/login" />;
+            else return <Redirect to="/home" />;
           }}
         />
         <Route
@@ -60,7 +50,7 @@ const Routers = () => {
           path="/react-able/elements-components"
           render={() => {
             if (checkAuth()) return <Route component={ElementsComponents} />;
-            else return <Redirect to="/login" />;
+            else return <Redirect to="/home" />;
           }}
         />
         <Route

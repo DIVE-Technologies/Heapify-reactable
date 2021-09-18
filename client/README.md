@@ -6,6 +6,9 @@
 
 ### TODO
 - [ ] Show Password in login
+- [ ] Add shadow on Login button on homepage
+- [ ] Change the font.
+- [ ] Give margin to the logo on header.
 - [ ] Landing Page for new programs
 - [ ] Add Google Analytics
 - [ ] Add Dark mode

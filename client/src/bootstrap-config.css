@@ -1,0 +1,18 @@
+@import url('./Utils/Colors.css');
+
+/* Buttons */
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    outline-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:focus {
+    background-color: var(--primary-color);
+}

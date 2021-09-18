@@ -1,0 +1,27 @@
+@import url('../../Utils/Colors.css');
+
+.heading {
+  font-size: 49px;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.3em;
+  margin-bottom: 10px;
+}
+
+.subHeading {
+    color: var(--primary-color);
+    font-size: 19px;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 576px) {
+    .heading {
+        font-size: 31px;
+    }
+
+    .subHeading {
+        margin-bottom: 20px;
+    }
+}

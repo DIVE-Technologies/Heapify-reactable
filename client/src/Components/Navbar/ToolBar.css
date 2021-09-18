@@ -41,7 +41,7 @@
   padding: 0 2rem;
 }
 
-.toolbar_navigation-items a {
+.toolbar_navigation-items div {
   color: var(--primary-color);
   font-size: 22px;
   font-weight: 300;
