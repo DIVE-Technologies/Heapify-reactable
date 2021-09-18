@@ -61,12 +61,12 @@ const Styles = () => {
               application. This is the general convention that we all have
               followed till now while working. But this way of adding styles
               might cause some problems as it will create global styles. So, the
-              styles added via this method will apply to all the files
+              styles added via this method will apply to all the child components 
               irrespective of whether they are imported or not.
             </Content>
             <Content>
               For example: If we have added some styles to ul tag, then those
-              styles will be applicable to all the files in the project. So, in
+              styles will be applicable to all the child components as well. So, in
               order to overcome this problem, we have another way of importing
               the files.
             </Content>

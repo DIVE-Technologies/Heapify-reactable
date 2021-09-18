@@ -77,7 +77,7 @@ const Home = () => {
             "Unmounting Phase",
           ]}
         />
-        <ContentCard
+        {/* <ContentCard
           title="React Hooks"
           navigate={() => history.push("/ReactAble/hooks")}
           data={[
@@ -85,7 +85,7 @@ const Home = () => {
             "Use of React Hooks",
             "Various React Hooks",
           ]}
-        />
+        /> */}
       </Container>
       <Footer />
     </div>
