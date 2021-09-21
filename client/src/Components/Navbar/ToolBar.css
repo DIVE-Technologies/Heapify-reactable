@@ -5,8 +5,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
   background-color: var(--white-color);
-  height: 56px;
+  height: 70px;
 }
 
 .toolbar_navigator {
@@ -41,7 +42,7 @@
   padding: 0 2rem;
 }
 
-.toolbar_navigation-items div {
+.toolbar_navigation-items a {
   color: var(--primary-color);
   font-size: 22px;
   font-weight: 300;

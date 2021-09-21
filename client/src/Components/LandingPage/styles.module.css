@@ -1,0 +1,59 @@
+@import url('../../Utils/Colors.css');
+
+.featureCardHeading {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.featureSectionData {
+    font-size: 17px;
+    color: var(--primary-color);
+    word-spacing: 4px;
+    padding: 0px 13px;
+}
+
+.featureImageContainer {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    text-align: center;
+}
+
+.pricingCard {
+    border-radius: 10px;
+    /* z-index: -1; */
+    box-shadow: 0px 0px 16px 1px var(--lightGray-color);
+}
+
+.pricingCard:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 16px 1px var(--primary-color);
+    transform: scale(1.05);
+    transition: 0.4s ease-in-out;
+}
+
+.pricingCardHeading {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.pricingCardCost {
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: 300;
+    padding: 20px 0px;
+}
+
+.pricingCardpricingIcon {
+    color: var(--white-color);
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 28px;
+    background-color: green;
+}
+
+.pricingCardpricingText {
+    color: var(--primary-color);
+    font-size: 24px;
+}

@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Table } from "react-bootstrap";
-import CodeSnippet from "../../Components/CodeSnippet";
-import Content from "../../Components/Content";
-import Heading from "../../Components/Heading";
-import SubHeading from "../../Components/SubHeading";
+import CodeSnippet from "../../Components/Resources/CodeSnippet";
+import Content from "../../Components/Resources/Content";
+import Heading from "../../Components/Resources/Heading";
+import SubHeading from "../../Components/Resources/SubHeading";
 import "./styles.css";
 import ReactProject from "../../Assets/Images/ReactProject.png";
-import Image from "../../Components/Image";
-import PageHeading from "../../Components/PageHeading";
+import Image from "../../Components/Resources/Image";
+import PageHeading from "../../Components/Resources/PageHeading";
 import Footer from "../../Components/Footer";
 
 const Basics = () => {

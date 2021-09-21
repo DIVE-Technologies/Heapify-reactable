@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Content from "../../Components/Content";
-import Heading from "../../Components/Heading";
-import SubHeading from "../../Components/SubHeading";
+import Content from "../../Components/Resources/Content";
+import Heading from "../../Components/Resources/Heading";
+import SubHeading from "../../Components/Resources/SubHeading";
 import "./styles.css";
-import PageHeading from "../../Components/PageHeading";
+import PageHeading from "../../Components/Resources/PageHeading";
 import Footer from "../../Components/Footer";
 
 const ElementsComponents = () => {

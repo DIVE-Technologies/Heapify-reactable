@@ -1,7 +1,7 @@
 import React from "react";
 import Toolbar from "./ToolBar";
-import SideDrawer from "./sidemenu/SideDrawer";
-import BackDrop from "./backdrop/Backdrop";
+// import SideDrawer from "./sidemenu/SideDrawer";
+// import BackDrop from "./backdrop/Backdrop";
 
 class Menu extends React.Component {
   state = {
@@ -18,17 +18,17 @@ class Menu extends React.Component {
   };
 
   render() {
-    let backdrop;
+    // let backdrop;
 
-    if (this.state.sideDrawerOpen) {
-      backdrop = <BackDrop click={this.backDropClickHandler} />;
-    }
+    // if (this.state.sideDrawerOpen) {
+    //   backdrop = <BackDrop click={this.backDropClickHandler} />;
+    // }
 
     return (
       <div style={{ height: "100%" }}>
-        <Toolbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
-        {backdrop}
+        <Toolbar />
+        {/* <SideDrawer show={this.state.sideDrawerOpen} /> */}
+        {/* {backdrop} */}
       </div>
     );
   }

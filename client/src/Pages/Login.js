@@ -3,8 +3,9 @@ import { Container, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Btn from "../Components/Btn";
 import Input from "../Components/Input";
-import PageHeading from "../Components/PageHeading";
+import PageHeading from "../Components/Resources/PageHeading";
 import { setLocalData } from "../Utils/LocalStorage";
+import Globals from '../config/Globals';
 
 const Login = () => {
   const history = useHistory();
@@ -14,7 +15,7 @@ const Login = () => {
   const [isLoading, setLoading] = useState(false);
 
   const validateEmail = () => {
-    const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const expression = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     return !expression.test(email);
   };
 
@@ -40,7 +41,7 @@ const Login = () => {
       setLoading(true);
 
       let result = await fetch(
-        `https://heapify-reactable.herokuapp.com/api/users/signin`,
+        `${Globals.BASE_URL}/api/users/signin`,
         {
           method: "POST",
           headers: {
@@ -78,11 +79,11 @@ const Login = () => {
         <Card style={{ width: "31rem" }} className="shadow-lg">
           <Card.Body>
             <Card.Title className="text-center">Login</Card.Title>
-            <form type="submit" onSubmit={handleLogin} className="text-center">
+            <form type="submit" onSubmit={handleLogin}>
               <Input
                 title="Email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="YourEmail@gmail.com"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
               />
@@ -101,12 +102,14 @@ const Login = () => {
                   {error}
                 </div>
               ) : null}
+              <div className="text-center">
               <Btn
                 variant="primary"
                 onClick={handleLogin}
                 loading={isLoading}
                 title="Login"
               />
+              </div>
             </form>
           </Card.Body>
         </Card>

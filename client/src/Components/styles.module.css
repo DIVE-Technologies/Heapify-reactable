@@ -1,5 +1,10 @@
 @import url('../Utils/Colors.css');
 
+.btn {
+  box-shadow: 1px 1px 16px gray;
+  width: 130px;
+}
+
 .pageHeading {
   background-color: var(--primary-color);
 }

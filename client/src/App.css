@@ -6,6 +6,7 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE 10+ and Edge */
   user-select: none;
+  font-family: 'Nunito', sans-serif;
 }
 
 @media print {

@@ -1,11 +1,11 @@
 import React from "react";
 import "./styles.css";
-import PageHeading from "../../Components/PageHeading";
+import PageHeading from "../../Components/Resources/PageHeading";
 import Footer from "../../Components/Footer";
 import { Container } from "react-bootstrap";
-import CodeSnippet from "../../Components/CodeSnippet";
-import Content from "../../Components/Content";
-import Heading from "../../Components/Heading";
+import CodeSnippet from "../../Components/Resources/CodeSnippet";
+import Content from "../../Components/Resources/Content";
+import Heading from "../../Components/Resources/Heading";
 
 const StateProps = () => {
   return (

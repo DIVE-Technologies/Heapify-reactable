@@ -15,25 +15,25 @@ const Toolbar = (props) => {
         <div />
         <div className="toolbar_logo">
           <div onClick={() => history.push("/home")}>
-            <img src={Logo} alt="Logo" height="50" width="50" />
+            <img src={Logo} alt="Logo" height="50" width="50" style={{ marginTop: 10, marginLeft: 10 }} />
           </div>
         </div>
         <div className="spacer" />
         <div className="toolbar_navigation-items">
           <ul>
-            <li>
-              <div>About</div>
+            {/* <li>
+              <a href="#heroSection">About</a>
             </li>
             <li>
-              <div>Features</div>
+              <a href="#featureSection">Features</a>
             </li>
             <li>
-              <div>Programs</div>
+              <a href="#programSection">Programs</a>
             </li>
             <li>
-              <div>Contact Us</div>
-            </li>
-            <li>
+              <a href="#contactSection">Contact Us</a>
+            </li> */}
+            <li style={{ marginTop: 20, marginRight: 20 }}>
               {!checkAuth() ? (
                 <Btn title="Login" onClick={() => history.push("/login")} />
               ) : (

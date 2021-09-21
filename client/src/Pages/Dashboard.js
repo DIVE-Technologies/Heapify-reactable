@@ -1,9 +1,9 @@
 import React from "react";
-import PageHeading from "../Components/PageHeading";
+import PageHeading from "../Components/Resources/PageHeading";
 import { Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "./styles.css";
-import ContentCard from "../Components/ContentCard";
+import ContentCard from "../Components/Resources/ContentCard";
 
 const Home = () => {
   const history = useHistory();
