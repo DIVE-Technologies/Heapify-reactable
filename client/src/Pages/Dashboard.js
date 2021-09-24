@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "./styles.css";
 import ContentCard from "../Components/ContentCard";
-import Footer from '../Components/Footer';
+import Footer from "../Components/Footer";
 
 const Home = () => {
   const history = useHistory();
@@ -40,7 +40,7 @@ const Home = () => {
         />
         <ContentCard
           title="State & Props"
-          navigate={() => history.push("/ReactAble/State-Props")}
+          navigate={() => history.push("/ReactAble/state-props")}
           data={[
             "What is State?",
             "How to use and manage state?",
@@ -69,7 +69,7 @@ const Home = () => {
         />
         <ContentCard
           title="Lifecycle Methods"
-          navigate={() => history.push("/ReactAble/Lifecycle-methods")}
+          navigate={() => history.push("/ReactAble/lifecycle-methods")}
           data={[
             "What are Lifecycle Methods?",
             "Mounting Phase",
@@ -77,7 +77,7 @@ const Home = () => {
             "Unmounting Phase",
           ]}
         />
-        {/* <ContentCard
+        <ContentCard
           title="React Hooks"
           navigate={() => history.push("/ReactAble/hooks")}
           data={[
@@ -85,7 +85,42 @@ const Home = () => {
             "Use of React Hooks",
             "Various React Hooks",
           ]}
-        /> */}
+        />
+        <ContentCard
+          title="Npm & Array methods"
+          navigate={() => history.push("/ReactAble/npm-array-methods")}
+          data={[
+            "What are npm packages?",
+            "map & filter methods",
+            "Lists & Keys",
+          ]}
+        />
+        <ContentCard
+          title="Event Handling"
+          navigate={() => history.push("/ReactAble/event-handling")}
+          data={["Handling events in React", "What are synthetic events?"]}
+        />
+        <ContentCard
+          title="Context API"
+          navigate={() => history.push("/ReactAble/context-API")}
+          data={[
+            "What is Context API?",
+            "createContext",
+            "Providers",
+            "Consumers",
+          ]}
+        />
+        <ContentCard
+          title="React Router"
+          navigate={() => history.push("/ReactAble/react-router")}
+          data={[
+            "What is React Router?",
+            "Installation",
+            "Routes",
+            "Route Matchers",
+            "Route Changers"
+          ]}
+        />
       </Container>
       <Footer />
     </div>

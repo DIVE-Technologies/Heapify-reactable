@@ -13,6 +13,10 @@ import Styles from "../Pages/React-Able-Notes/Styles";
 import DOM from "../Pages/React-Able-Notes/DOM";
 import LifecycleMethods from "../Pages/React-Able-Notes/LifecycleMethods";
 import Hooks from "../Pages/React-Able-Notes/Hooks";
+import NpmArrayMethods from "../Pages/React-Able-Notes/NpmArrayMethods";
+import EventHandling from "../Pages/React-Able-Notes/EventHandling";
+import ContextAPI from '../Pages/React-Able-Notes/ConextAPI';
+import ReactRouter from "../Pages/React-Able-Notes/ReactRouter";
 
 const Routers = () => {
   const checkAuth = () => {
@@ -72,7 +76,7 @@ const Routers = () => {
         />
         <Route
           exact
-          path="/ReactAble/State-Props"
+          path="/ReactAble/state-props"
           render={() => {
             if (checkAuth()) return <Route component={StateProps} />;
             else return <Redirect to="/login" />;
@@ -96,7 +100,7 @@ const Routers = () => {
         />
         <Route
           exact
-          path="/ReactAble/Lifecycle-methods"
+          path="/ReactAble/lifecycle-methods"
           render={() => {
             if (checkAuth()) return <Route component={LifecycleMethods} />;
             else return <Redirect to="/login" />;
@@ -107,6 +111,38 @@ const Routers = () => {
           path="/ReactAble/hooks"
           render={() => {
             if (checkAuth()) return <Route component={Hooks} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
+        <Route
+          exact
+          path="/ReactAble/npm-array-methods"
+          render={() => {
+            if (checkAuth()) return <Route component={NpmArrayMethods} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
+        <Route
+          exact
+          path="/ReactAble/event-handling"
+          render={() => {
+            if (checkAuth()) return <Route component={EventHandling} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
+        <Route
+          exact
+          path="/ReactAble/context-API"
+          render={() => {
+            if (checkAuth()) return <Route component={ContextAPI} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
+        <Route
+          exact
+          path="/ReactAble/react-router"
+          render={() => {
+            if (checkAuth()) return <Route component={ReactRouter} />;
             else return <Redirect to="/login" />;
           }}
         />
