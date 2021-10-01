@@ -3,7 +3,6 @@ import "./styles.css";
 import PageHeading from "../../Components/PageHeading";
 import Footer from "../../Components/Footer";
 import { Container } from "react-bootstrap";
-import CodeSnippet from "../../Components/CodeSnippet";
 import Content from "../../Components/Content";
 import Heading from "../../Components/Heading";
 

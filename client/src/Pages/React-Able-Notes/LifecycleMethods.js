@@ -8,7 +8,6 @@ import Content from "../../Components/Content";
 import Heading from "../../Components/Heading";
 import SubHeading from "../../Components/SubHeading";
 import TabSpace from "../../Components/TabSpace";
-import Tabs from "@restart/ui/esm/Tabs";
 
 const LifecycleMethods = () => {
   return (
