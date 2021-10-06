@@ -17,6 +17,7 @@ import NpmArrayMethods from "../Pages/React-Able-Notes/NpmArrayMethods";
 import EventHandling from "../Pages/React-Able-Notes/EventHandling";
 import ContextAPI from '../Pages/React-Able-Notes/ConextAPI';
 import ReactRouter from "../Pages/React-Able-Notes/ReactRouter";
+import API from "../Pages/React-Able-Notes/API";
 
 const Routers = () => {
   const checkAuth = () => {
@@ -143,6 +144,14 @@ const Routers = () => {
           path="/ReactAble/react-router"
           render={() => {
             if (checkAuth()) return <Route component={ReactRouter} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
+        <Route
+          exact
+          path="/ReactAble/API"
+          render={() => {
+            if (checkAuth()) return <Route component={API} />;
             else return <Redirect to="/login" />;
           }}
         />
