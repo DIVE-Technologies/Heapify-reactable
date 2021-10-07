@@ -4,6 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { HashRouter } from "react-router-dom";
 import Routers from "./Routers/Routers";
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-Q4RP4T25HE');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 function App() {
   useEffect(() => {
     document.addEventListener("contextmenu", (e) => {
