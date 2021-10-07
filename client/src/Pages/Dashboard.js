@@ -121,6 +121,16 @@ const Home = () => {
             "Route Changers"
           ]}
         />
+        <ContentCard
+          title="APIs"
+          navigate={() => history.push("/ReactAble/API")}
+          data={[
+            "What are APIs?",
+            "Fetch & Axios",
+            "HTTP methods",
+            "Status codes",
+          ]}
+        />
       </Container>
       <Footer />
     </div>

@@ -17,6 +17,7 @@ import NpmArrayMethods from "../Pages/React-Able-Notes/NpmArrayMethods";
 import EventHandling from "../Pages/React-Able-Notes/EventHandling";
 import ContextAPI from "../Pages/React-Able-Notes/ConextAPI";
 import ReactRouter from "../Pages/React-Able-Notes/ReactRouter";
+import API from "../Pages/React-Able-Notes/API";
 
 const Routers = () => {
   const checkAuth = () => {
@@ -153,6 +154,14 @@ const Routers = () => {
         />
         <Route exact path="/prep-check" component={() => redirectToUrl('https://docs.google.com/forms/d/e/1FAIpQLSezgw43DjSYP3RjS2jSExXpsFhJwjS_ioONuKBO8BwdS7lXGQ/viewform?usp=sf_link')} />
         <Route exact path="/react-able" component={() => redirectToUrl('https://docs.google.com/forms/d/e/1FAIpQLSfXyzjPI9ZKfdkuGUiMRJPTRSlTorH5RvVyV-H45k1n-Fn9Ww/viewform?usp=sf_link')} />
+        <Route
+          exact
+          path="/ReactAble/API"
+          render={() => {
+            if (checkAuth()) return <Route component={API} />;
+            else return <Redirect to="/login" />;
+          }}
+        />
         <Redirect to="/login" />
       </Switch>
     </HashRouter>
