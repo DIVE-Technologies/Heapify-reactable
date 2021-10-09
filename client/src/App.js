@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Routers from "./Routers/Routers";
 
 import ReactGA from 'react-ga';
@@ -27,11 +27,11 @@ function App() {
   }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="App">
         <Routers />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
