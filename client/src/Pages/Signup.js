@@ -9,10 +9,13 @@ import { authUrl } from "../config/baseUrl";
 import Anoption from "../Components/AuthRedirect";
 import AuthRedirect from "../Components/AuthRedirect";
 
-const Login = () => {
+const Signup = () => {
   const history = useHistory();
+  const [contactNumber, setContact] = useState();
+  const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -21,28 +24,42 @@ const Login = () => {
     return !expression.test(email);
   };
 
+  const validatePhone = () => {
+    const expression = /^(\+\d{1,3}[- ]?)?\d{10}$/;
+    return !expression.test(contactNumber);
+  };
+
   const validate = () => {
     setError("");
+    if (!name) {
+      setError("Please enter your name");
+    }
     if (!email) {
       setError("Email is required");
-      return false;
-    } else if (!password) {
-      setError("Password is required");
       return false;
     } else if (validateEmail()) {
       setError("Invalid Email");
       return false;
+    } else if (!password) {
+      setError("Password is required");
+      return false;
+    } else if (confirmPassword === "") {
+      setError(" Please confirm your password");
+    } else if (password !== confirmPassword) {
+      setError("Passwords do not match");
+    } else if (validatePhone()) {
+      setError("Invalid Contact Number");
     } else {
       return true;
     }
   };
 
-  const handleLogin = async () => {
+  const handleSignup = async () => {
     if (validate()) {
-      let data = { email, password };
+      let data = { name, confirmPassword, email, password, contactNumber };
       setLoading(true);
 
-      let result = await fetch(`${authUrl}/login`, {
+      let result = await fetch(`${authUrl}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,8 +95,15 @@ const Login = () => {
       <Container className="pageSection d-flex justify-content-center align-items-center">
         <Card style={{ width: "31rem" }} className="shadow-lg">
           <Card.Body>
-            <Card.Title className="text-center">Login</Card.Title>
-            <form type="submit" onSubmit={handleLogin} className="text-center">
+            <Card.Title className="text-center">Sign up</Card.Title>
+            <form type="submit" onSubmit={handleSignup} className="text-center">
+              <Input
+                title="Name"
+                type="text"
+                placeholder="Enter your name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
               <Input
                 title="Email"
                 type="email"
@@ -90,9 +114,23 @@ const Login = () => {
               <Input
                 title="Password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Set your password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+              />
+              <Input
+                title="Confirm Password"
+                type="password"
+                placeholder="Confirm password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
+              />
+              <Input
+                title="Contact no"
+                type="tel"
+                placeholder="Enter your contact number"
+                onChange={(e) => setContact(e.target.value)}
+                value={contactNumber}
               />
               {error ? (
                 <div
@@ -104,26 +142,16 @@ const Login = () => {
               ) : null}
               <Btn
                 variant="primary"
-                onClick={handleLogin}
+                onClick={handleSignup}
                 loading={isLoading}
-                title="Login"
+                title="Register"
               />
             </form>
             <AuthRedirect
-              msg="Don't have an account"
-              title="Sign up"
-              redirect="signup"
+              msg="Already have an account?"
+              title="Login"
+              redirect="login"
             />
-            {/* <p align="center">
-              Dont have an account?{" "}
-              <span
-                onClick={() => {
-                  history.push("/signup");
-                }}
-              >
-                Sign up
-              </span>
-            </p> */}
           </Card.Body>
         </Card>
       </Container>
@@ -131,4 +159,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
