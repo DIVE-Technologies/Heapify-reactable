@@ -6,8 +6,8 @@ import Input from "../Components/Input";
 import PageHeading from "../Components/PageHeading";
 import { setLocalData } from "../Utils/LocalStorage";
 import { authUrl } from "../config/baseUrl";
-import Anoption from "../Components/AuthRedirect";
 import AuthRedirect from "../Components/AuthRedirect";
+import { validateEmail } from "./userUtils";
 
 const Login = () => {
   const history = useHistory();
@@ -16,10 +16,10 @@ const Login = () => {
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
-  const validateEmail = () => {
-    const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return !expression.test(email);
-  };
+  // const validateEmail = () => {
+  //   const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  //   return !expression.test(email);
+  // };
 
   const validate = () => {
     setError("");
@@ -29,7 +29,7 @@ const Login = () => {
     } else if (!password) {
       setError("Password is required");
       return false;
-    } else if (validateEmail()) {
+    } else if (validateEmail(email)) {
       setError("Invalid Email");
       return false;
     } else {
@@ -114,16 +114,6 @@ const Login = () => {
               title="Sign up"
               redirect="signup"
             />
-            {/* <p align="center">
-              Dont have an account?{" "}
-              <span
-                onClick={() => {
-                  history.push("/signup");
-                }}
-              >
-                Sign up
-              </span>
-            </p> */}
           </Card.Body>
         </Card>
       </Container>

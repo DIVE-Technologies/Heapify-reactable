@@ -6,8 +6,8 @@ import Input from "../Components/Input";
 import PageHeading from "../Components/PageHeading";
 import { setLocalData } from "../Utils/LocalStorage";
 import { authUrl } from "../config/baseUrl";
-import Anoption from "../Components/AuthRedirect";
 import AuthRedirect from "../Components/AuthRedirect";
+import { validateEmail, validatePhone } from "./userUtils.js";
 
 const Signup = () => {
   const history = useHistory();
@@ -19,25 +19,14 @@ const Signup = () => {
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
-  const validateEmail = () => {
-    const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return !expression.test(email);
-  };
-
-  const validatePhone = () => {
-    const expression = /^(\+\d{1,3}[- ]?)?\d{10}$/;
-    return !expression.test(contactNumber);
-  };
-
   const validate = () => {
     setError("");
     if (!name) {
       setError("Please enter your name");
-    }
-    if (!email) {
+    } else if (!email) {
       setError("Email is required");
       return false;
-    } else if (validateEmail()) {
+    } else if (validateEmail(email)) {
       setError("Invalid Email");
       return false;
     } else if (!password) {
@@ -47,7 +36,7 @@ const Signup = () => {
       setError(" Please confirm your password");
     } else if (password !== confirmPassword) {
       setError("Passwords do not match");
-    } else if (validatePhone()) {
+    } else if (validatePhone(contactNumber)) {
       setError("Invalid Contact Number");
     } else {
       return true;
@@ -126,7 +115,7 @@ const Signup = () => {
                 value={confirmPassword}
               />
               <Input
-                title="Contact no"
+                title="Contact No."
                 type="tel"
                 placeholder="Enter your contact number"
                 onChange={(e) => setContact(e.target.value)}
