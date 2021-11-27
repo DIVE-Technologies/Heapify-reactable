@@ -7,7 +7,7 @@ import PageHeading from "../Components/PageHeading";
 import { setLocalData } from "../Utils/LocalStorage";
 import { authUrl } from "../config/baseUrl";
 import AuthRedirect from "../Components/AuthRedirect";
-import { validateEmail, validatePhone } from "./userUtils.js";
+import { validateEmail, validatePhone } from "../Utils/Validation.js";
 
 const Signup = () => {
   const history = useHistory();

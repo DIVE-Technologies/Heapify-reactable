@@ -7,7 +7,7 @@ import PageHeading from "../Components/PageHeading";
 import { setLocalData } from "../Utils/LocalStorage";
 import { authUrl } from "../config/baseUrl";
 import AuthRedirect from "../Components/AuthRedirect";
-import { validateEmail } from "./userUtils";
+import { validateEmail } from "../Utils/Validation";
 
 const Login = () => {
   const history = useHistory();
@@ -15,11 +15,6 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
-
-  // const validateEmail = () => {
-  //   const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  //   return !expression.test(email);
-  // };
 
   const validate = () => {
     setError("");
@@ -110,7 +105,7 @@ const Login = () => {
               />
             </form>
             <AuthRedirect
-              msg="Don't have an account"
+              msg="Don't have an account?"
               title="Sign up"
               redirect="signup"
             />
