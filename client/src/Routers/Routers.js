@@ -18,6 +18,7 @@ import EventHandling from "../Pages/React-Able-Notes/EventHandling";
 import ContextAPI from "../Pages/React-Able-Notes/ConextAPI";
 import ReactRouter from "../Pages/React-Able-Notes/ReactRouter";
 import API from "../Pages/React-Able-Notes/API";
+import Signup from "../Pages/Signup";
 
 const Routers = () => {
   const checkAuth = () => {
@@ -44,6 +45,14 @@ const Routers = () => {
           path="/login"
           render={() => {
             if (!checkAuth()) return <Route component={Login} />;
+            else return <Redirect to="/dashboard" />;
+          }}
+        />
+        <Route
+          exact
+          path="/signup"
+          render={() => {
+            if (!checkAuth()) return <Route component={Signup} />;
             else return <Redirect to="/dashboard" />;
           }}
         />
@@ -152,8 +161,24 @@ const Routers = () => {
             else return <Redirect to="/login" />;
           }}
         />
-        <Route exact path="/prep-check" component={() => redirectToUrl('https://docs.google.com/forms/d/e/1FAIpQLSezgw43DjSYP3RjS2jSExXpsFhJwjS_ioONuKBO8BwdS7lXGQ/viewform?usp=sf_link')} />
-        <Route exact path="/react-able" component={() => redirectToUrl('https://docs.google.com/forms/d/e/1FAIpQLSfXyzjPI9ZKfdkuGUiMRJPTRSlTorH5RvVyV-H45k1n-Fn9Ww/viewform?usp=sf_link')} />
+        <Route
+          exact
+          path="/prep-check"
+          component={() =>
+            redirectToUrl(
+              "https://docs.google.com/forms/d/e/1FAIpQLSezgw43DjSYP3RjS2jSExXpsFhJwjS_ioONuKBO8BwdS7lXGQ/viewform?usp=sf_link"
+            )
+          }
+        />
+        <Route
+          exact
+          path="/react-able"
+          component={() =>
+            redirectToUrl(
+              "https://docs.google.com/forms/d/e/1FAIpQLSfXyzjPI9ZKfdkuGUiMRJPTRSlTorH5RvVyV-H45k1n-Fn9Ww/viewform?usp=sf_link"
+            )
+          }
+        />
         <Route
           exact
           path="/ReactAble/API"

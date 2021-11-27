@@ -7,42 +7,48 @@ import PageHeading from "../Components/PageHeading";
 import { setLocalData } from "../Utils/LocalStorage";
 import { authUrl } from "../config/baseUrl";
 import AuthRedirect from "../Components/AuthRedirect";
-import { validateEmail } from "./userUtils";
+import { validateEmail, validatePhone } from "./userUtils.js";
 
-const Login = () => {
+const Signup = () => {
   const history = useHistory();
+  const [contactNumber, setContact] = useState();
+  const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
-  // const validateEmail = () => {
-  //   const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  //   return !expression.test(email);
-  // };
-
   const validate = () => {
     setError("");
-    if (!email) {
+    if (!name) {
+      setError("Please enter your name");
+    } else if (!email) {
       setError("Email is required");
-      return false;
-    } else if (!password) {
-      setError("Password is required");
       return false;
     } else if (validateEmail(email)) {
       setError("Invalid Email");
       return false;
+    } else if (!password) {
+      setError("Password is required");
+      return false;
+    } else if (confirmPassword === "") {
+      setError(" Please confirm your password");
+    } else if (password !== confirmPassword) {
+      setError("Passwords do not match");
+    } else if (validatePhone(contactNumber)) {
+      setError("Invalid Contact Number");
     } else {
       return true;
     }
   };
 
-  const handleLogin = async () => {
+  const handleSignup = async () => {
     if (validate()) {
-      let data = { email, password };
+      let data = { name, confirmPassword, email, password, contactNumber };
       setLoading(true);
 
-      let result = await fetch(`${authUrl}/login`, {
+      let result = await fetch(`${authUrl}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,8 +84,15 @@ const Login = () => {
       <Container className="pageSection d-flex justify-content-center align-items-center">
         <Card style={{ width: "31rem" }} className="shadow-lg">
           <Card.Body>
-            <Card.Title className="text-center">Login</Card.Title>
-            <form type="submit" onSubmit={handleLogin} className="text-center">
+            <Card.Title className="text-center">Sign up</Card.Title>
+            <form type="submit" onSubmit={handleSignup} className="text-center">
+              <Input
+                title="Name"
+                type="text"
+                placeholder="Enter your name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
               <Input
                 title="Email"
                 type="email"
@@ -90,9 +103,23 @@ const Login = () => {
               <Input
                 title="Password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Set your password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+              />
+              <Input
+                title="Confirm Password"
+                type="password"
+                placeholder="Confirm password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
+              />
+              <Input
+                title="Contact No."
+                type="tel"
+                placeholder="Enter your contact number"
+                onChange={(e) => setContact(e.target.value)}
+                value={contactNumber}
               />
               {error ? (
                 <div
@@ -104,15 +131,15 @@ const Login = () => {
               ) : null}
               <Btn
                 variant="primary"
-                onClick={handleLogin}
+                onClick={handleSignup}
                 loading={isLoading}
-                title="Login"
+                title="Register"
               />
             </form>
             <AuthRedirect
-              msg="Don't have an account"
-              title="Sign up"
-              redirect="signup"
+              msg="Already have an account?"
+              title="Login"
+              redirect="login"
             />
           </Card.Body>
         </Card>
@@ -121,4 +148,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
