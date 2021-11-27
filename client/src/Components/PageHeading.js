@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Logo from "../Assets/Images/Logo.png";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
-import { clearLocalData, getLocalData } from "../Utils/LocalStorage";
+import PropTypes from "prop-types";
 
 const PageHeading = (props) => {
-  const history = useHistory();
-  const [user, setUser] = useState();
+  // const history = useHistory();
+  // const [user, setUser] = useState();
 
-  useEffect(() => {
-    setUser(getLocalData("heapifyUser"));
-  }, []);
+  // useEffect(() => {
+  //   setUser(getLocalData("heapifyUser"));
+  // }, []);
 
-  const handleLogout = () => {
-    clearLocalData();
+  // const handleLogout = () => {
+  //   clearLocalData();
 
-    history.push("/login");
-  };
+  //   history.push("/login");
+  // };
 
   return (
     <Navbar className="fixed-top pageHeading text-light">
@@ -30,6 +29,10 @@ const PageHeading = (props) => {
       </Container>
     </Navbar>
   );
+};
+
+PageHeading.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 
 export default PageHeading;

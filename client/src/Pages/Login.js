@@ -14,7 +14,7 @@ const Login = () => {
   const [isLoading, setLoading] = useState(false);
 
   const validateEmail = () => {
-    const expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const expression = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     return !expression.test(email);
   };
 
@@ -40,7 +40,7 @@ const Login = () => {
       setLoading(true);
 
       let result = await fetch(
-        `https://heapify-reactable.herokuapp.com/api/users/signin`,
+        "https://heapify-reactable.herokuapp.com/api/users/signin",
         {
           method: "POST",
           headers: {

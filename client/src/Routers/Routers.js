@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Basics from "../Pages/React-Able-Notes/Basics";
 import Home from "../Pages/Dashboard";
 import { getLocalData } from "../Utils/LocalStorage";
-import HomePage from "../Pages/Home/HomePage";
 import JSX from "../Pages/React-Able-Notes/JSX";
 import StateProps from "../Pages/React-Able-Notes/State-Props";
 import ElementsComponents from "../Pages/React-Able-Notes/ElementsComponents";
@@ -152,8 +151,24 @@ const Routers = () => {
             else return <Redirect to="/login" />;
           }}
         />
-        <Route exact path="/prep-check" component={() => redirectToUrl('https://docs.google.com/forms/d/e/1FAIpQLSezgw43DjSYP3RjS2jSExXpsFhJwjS_ioONuKBO8BwdS7lXGQ/viewform?usp=sf_link')} />
-        <Route exact path="/react-able" component={() => redirectToUrl('https://docs.google.com/forms/d/e/1FAIpQLSfXyzjPI9ZKfdkuGUiMRJPTRSlTorH5RvVyV-H45k1n-Fn9Ww/viewform?usp=sf_link')} />
+        <Route
+          exact
+          path="/prep-check"
+          component={() =>
+            redirectToUrl(
+              "https://docs.google.com/forms/d/e/1FAIpQLSezgw43DjSYP3RjS2jSExXpsFhJwjS_ioONuKBO8BwdS7lXGQ/viewform?usp=sf_link"
+            )
+          }
+        />
+        <Route
+          exact
+          path="/react-able"
+          component={() =>
+            redirectToUrl(
+              "https://docs.google.com/forms/d/e/1FAIpQLSfXyzjPI9ZKfdkuGUiMRJPTRSlTorH5RvVyV-H45k1n-Fn9Ww/viewform?usp=sf_link"
+            )
+          }
+        />
         <Route
           exact
           path="/ReactAble/API"

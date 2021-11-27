@@ -24,8 +24,9 @@ const JSX = () => {
               React.createElement(type, [props], [children])
             </CodeSnippet>
             <Content>
-            This is the syntax for React.createElement function. Let’s take a
-            deeper look at the parameters that are being passed to it.</Content>
+              This is the syntax for React.createElement function. Let’s take a
+              deeper look at the parameters that are being passed to it.
+            </Content>
             <ul className="listItem">
               <li>
                 Type is an HTML tag like h1, div or it can be a React component
@@ -45,7 +46,9 @@ const JSX = () => {
               lot of code.
             </Content>
             <CodeSnippet>
-              React.createElement("ul",{'{}'},[React.createElement("li",{'{}'},"First Element"),React.createElement("li",{'{}'},"Second element")]);
+              React.createElement("ul",{"{}"},[React.createElement("li",{"{}"}
+              ,"First Element"),React.createElement("li",{"{}"},"Second
+              element")]);
             </CodeSnippet>
             <Content>
               This syntax of code becomes very complicated in case of complex
@@ -66,7 +69,9 @@ const JSX = () => {
             <Container>
               <SubHeading title="Without JSX" />
               <CodeSnippet>
-                const element=React.createElement("h1",{},I love Heapify ReactAble!!); ReactDOM.render(element,document.getElementById("root"));
+                const element=React.createElement("h1",{},I love Heapify
+                ReactAble!!);
+                ReactDOM.render(element,document.getElementById("root"));
               </CodeSnippet>
               <SubHeading title="With JSX" />
               <CodeSnippet>
@@ -92,7 +97,7 @@ const JSX = () => {
             </Content>
             <CodeSnippet>
               const element ={" "}
-              {'<h1>{(greet) !== "formal" ? "Hey!" : "Hello!"}</h1>'}
+              {"<h1>{(greet) !== 'formal' ? 'Hey!' : 'Hello!'}</h1>"}
             </CodeSnippet>
             <Content>
               The browser does not understand the JSX because it's not a valid

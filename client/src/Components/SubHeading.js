@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
 const SubHeading = (props) => {
-    return (
-        <h5>
-            {props.title}
-        </h5>
-    )
-}
+  return <h5>{props.title}</h5>;
+};
 
-export default SubHeading
+SubHeading.propTypes = {
+  title: PropTypes.string,
+};
+
+SubHeading.defaultProps = {
+  title: "",
+};
+
+export default SubHeading;

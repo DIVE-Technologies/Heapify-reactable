@@ -1,5 +1,6 @@
 import React from "react";
 import { FormControl, InputGroup } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const Input = (props) => {
   return (
@@ -13,6 +14,20 @@ const Input = (props) => {
       />
     </InputGroup>
   );
+};
+
+Input.propTypes = {
+  title: PropTypes.string,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.node,
+};
+
+Input.defaultProps = {
+  title: "",
+  type: "text",
+  placeholder: "",
 };
 
 export default Input;

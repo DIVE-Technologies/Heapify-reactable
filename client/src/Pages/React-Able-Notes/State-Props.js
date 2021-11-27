@@ -50,12 +50,12 @@ const StateProps = () => {
               a state is:
             </Content>
             <CodeSnippet>
-              {'this.setState({attribute: "new-value"})'}
+              {"this.setState({attribute: 'new-value'})"}
             </CodeSnippet>
             <Content>or</Content>
             <CodeSnippet>
               {
-                'this.setState({attribute1: "new-value", attribute2: “new-value”});'
+                "this.setState({attribute1: 'new-value', attribute2: 'new-value'});"
               }
             </CodeSnippet>
             <Content>
@@ -90,7 +90,7 @@ const StateProps = () => {
               be considered like passing parameters to a JavaScript function and
               then using that value inside the function.
             </Content>
-            <CodeSnippet>{'const element = <Car brand="Ford" />'}</CodeSnippet>
+            <CodeSnippet>{"const element = <Car brand='Ford' />"}</CodeSnippet>
             <Content>
               The brand value passed in the Car component is a prop. This value
               could be access inside the Car component as:

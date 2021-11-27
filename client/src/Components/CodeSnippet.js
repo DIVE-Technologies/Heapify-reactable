@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
 const CodeSnippet = (props) => {
-    return (
-        <div className='mb-3'>
-            <code>{props.children}</code>
-        </div>
-    )
-}
+  return (
+    <div className="mb-3">
+      <code>{props.children}</code>
+    </div>
+  );
+};
 
-export default CodeSnippet
+CodeSnippet.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default CodeSnippet;

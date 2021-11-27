@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
 const Content = (props) => {
-    return (
-        <p>
-            {props.children}
-        </p>
-    )
-}
+  return <p>{props.children}</p>;
+};
 
-export default Content
+Content.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default Content;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const ContentCard = (props) => {
   return (
@@ -21,6 +22,16 @@ const ContentCard = (props) => {
       </Card.Body>
     </Card>
   );
+};
+
+ContentCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  data: PropTypes.array,
+  navigate: PropTypes.func.isRequired,
+};
+
+ContentCard.defaultProps = {
+  data: [],
 };
 
 export default ContentCard;
