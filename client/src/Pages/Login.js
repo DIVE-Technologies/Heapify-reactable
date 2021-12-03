@@ -49,9 +49,9 @@ const Login = () => {
       if (result.status === 200 || result.status === 201) {
         result = await result.json();
         const user = {
-          name: result.name,
-          email: result.email,
-          role: result.role,
+          name: result.data.name,
+          email: result.data.email,
+          role: result.data.role,
         };
         setLocalData("heapifyUser", user);
 
