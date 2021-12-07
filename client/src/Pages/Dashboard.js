@@ -10,7 +10,7 @@ import Footer from "../Components/Footer";
 const Home = () => {
   const history = useHistory();
   const flag =
-    getLocalData("heapifyUser")["role"] === "reactable" ? "true" : "false";
+    getLocalData("heapifyUser")["role"] === "reactable" ? true : false;
 
   return (
     <div>
