@@ -4,7 +4,6 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Basics from "../Pages/React-Able-Notes/Basics";
 import Home from "../Pages/Dashboard";
-import { getLocalData } from "../Utils/LocalStorage";
 import HomePage from "../Pages/Home/HomePage";
 import JSX from "../Pages/React-Able-Notes/JSX";
 import StateProps from "../Pages/React-Able-Notes/State-Props";
@@ -19,18 +18,10 @@ import ContextAPI from "../Pages/React-Able-Notes/ConextAPI";
 import ReactRouter from "../Pages/React-Able-Notes/ReactRouter";
 import API from "../Pages/React-Able-Notes/API";
 import Signup from "../Pages/Signup";
+import { checkAuth } from "../Utils/Validation";
+import { ReactRoleFlag } from "../Utils/RoleValidate";
 
 const Routers = () => {
-  const checkAuth = () => {
-    const name = getLocalData("heapifyUser");
-
-    if (name !== null) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   const redirectToUrl = (url) => {
     window.location.href = url;
     return null;
@@ -69,7 +60,8 @@ const Routers = () => {
           exact
           path="/ReactAble/basics"
           render={() => {
-            if (checkAuth()) return <Route component={Basics} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={Basics} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -77,7 +69,8 @@ const Routers = () => {
           exact
           path="/ReactAble/elements-components"
           render={() => {
-            if (checkAuth()) return <Route component={ElementsComponents} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={ElementsComponents} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -85,7 +78,8 @@ const Routers = () => {
           exact
           path="/ReactAble/JSX"
           render={() => {
-            if (checkAuth()) return <Route component={JSX} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={JSX} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -93,7 +87,8 @@ const Routers = () => {
           exact
           path="/ReactAble/state-props"
           render={() => {
-            if (checkAuth()) return <Route component={StateProps} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={StateProps} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -101,7 +96,8 @@ const Routers = () => {
           exact
           path="/ReactAble/Styles"
           render={() => {
-            if (checkAuth()) return <Route component={Styles} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={Styles} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -109,7 +105,8 @@ const Routers = () => {
           exact
           path="/ReactAble/DOM"
           render={() => {
-            if (checkAuth()) return <Route component={DOM} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={DOM} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -117,7 +114,8 @@ const Routers = () => {
           exact
           path="/ReactAble/lifecycle-methods"
           render={() => {
-            if (checkAuth()) return <Route component={LifecycleMethods} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={LifecycleMethods} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -125,7 +123,8 @@ const Routers = () => {
           exact
           path="/ReactAble/hooks"
           render={() => {
-            if (checkAuth()) return <Route component={Hooks} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={Hooks} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -133,7 +132,8 @@ const Routers = () => {
           exact
           path="/ReactAble/npm-array-methods"
           render={() => {
-            if (checkAuth()) return <Route component={NpmArrayMethods} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={NpmArrayMethods} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -141,7 +141,8 @@ const Routers = () => {
           exact
           path="/ReactAble/event-handling"
           render={() => {
-            if (checkAuth()) return <Route component={EventHandling} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={EventHandling} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -149,7 +150,8 @@ const Routers = () => {
           exact
           path="/ReactAble/context-API"
           render={() => {
-            if (checkAuth()) return <Route component={ContextAPI} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={ContextAPI} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -157,7 +159,8 @@ const Routers = () => {
           exact
           path="/ReactAble/react-router"
           render={() => {
-            if (checkAuth()) return <Route component={ReactRouter} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={ReactRouter} />;
             else return <Redirect to="/login" />;
           }}
         />
@@ -183,7 +186,8 @@ const Routers = () => {
           exact
           path="/ReactAble/API"
           render={() => {
-            if (checkAuth()) return <Route component={API} />;
+            if (checkAuth() && ReactRoleFlag())
+              return <Route component={API} />;
             else return <Redirect to="/login" />;
           }}
         />
